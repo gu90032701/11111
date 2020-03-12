@@ -463,3 +463,6 @@ C:\Users\Administrator\source\repos\restaurant\restaurant\obj\Debug\netcoreapp3.
 C:\Users\Administrator\source\repos\restaurant\restaurant\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Administrator\source\repos\restaurant\restaurant\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Users\Administrator\source\repos\restaurant\restaurant\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Category\Index.cshtml.g.cs
+C:\Users\Administrator\source\repos\restaurant\restaurant\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_CreateButtonPartialView.cshtml.g.cs
+C:\Users\Administrator\source\repos\restaurant\restaurant\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Category\Create.cshtml.g.cs
+C:\Users\Administrator\source\repos\restaurant\restaurant\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_CreateAndBackToListButton.cshtml.g.cs
