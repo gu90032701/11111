@@ -469,3 +469,5 @@ C:\Users\Administrator\source\repos\restaurant\restaurant\obj\Debug\netcoreapp3.
 C:\Users\Administrator\source\repos\restaurant\restaurant\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_TableButtonPartial.cshtml.g.cs
 C:\Users\Administrator\source\repos\restaurant\restaurant\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Category\Edit.cshtml.g.cs
 C:\Users\Administrator\source\repos\restaurant\restaurant\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_EditAndBackToListButton.cshtml.g.cs
+C:\Users\Administrator\source\repos\restaurant\restaurant\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Category\Delete.cshtml.g.cs
+C:\Users\Administrator\source\repos\restaurant\restaurant\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_DeleteAndBackToListButton.cshtml.g.cs
