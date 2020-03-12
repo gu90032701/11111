@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using restaurant.Data;
+using restaurant.Models;
 
 namespace restaurant.Areas.Admin.Controllers
 {
@@ -24,6 +25,19 @@ namespace restaurant.Areas.Admin.Controllers
         public IActionResult Create()
         {
             return View();
+        }
+        //Post-create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult>Create(Category category)
+        {
+            if(ModelState.IsValid)
+            {
+                _db.Category.Add(category);
+                await _db.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(category);
         }
     }
 }
