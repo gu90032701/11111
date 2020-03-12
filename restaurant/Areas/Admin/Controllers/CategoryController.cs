@@ -54,5 +54,19 @@ namespace restaurant.Areas.Admin.Controllers
             }
             return View(category);
         }
+        //post edit
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult>Edit(Category category)
+        {
+            if(ModelState.IsValid)
+            {
+                _db.Update(category);
+                await _db.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(category);
+        }
+
     }
 }
