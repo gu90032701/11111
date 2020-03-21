@@ -13,6 +13,8 @@ namespace restaurant.Data
             : base(options)
         {
         }
+        
         public DbSet<Category> Category { get; set; }
+        public DbSet<SubCategory> SubCategory { get; set; }
     }
 }
