@@ -42,7 +42,7 @@ namespace restaurant.Areas.Admin.Controllers
         {
             if(ModelState.IsValid)
             {
-                var doesSubcategoryExists = _db.SubCategory.Include(s => s.Category).Where(s => s.Name == model.SubCategory.Name && s.Category.Id == model.SubCategory.Id);
+                var doesSubcategoryExists = _db.SubCategory.Include(s => s.Category).Where(s => s.Name == model.SubCategory.Name && s.Category.Id == model.SubCategory.CategoryId);
                     if(doesSubcategoryExists.Count()>0)
                 {
                     //error
