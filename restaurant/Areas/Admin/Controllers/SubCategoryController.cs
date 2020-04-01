@@ -35,5 +35,32 @@ namespace restaurant.Areas.Admin.Controllers
             };
             return View(model);
         }
+        //post-create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult>Create(CategoryAndSubCategoryViewModel model)
+        {
+            if(ModelState.IsValid)
+            {
+                var doesSubcategoryExists = _db.SubCategory.Include(s => s.Category).Where(s => s.Name == model.SubCategory.Name && s.Category.Id == model.SubCategory.Id);
+                    if(doesSubcategoryExists.Count()>0)
+                {
+                    //error
+                }
+                else
+                {
+                    _db.SubCategory.Add(model.SubCategory);
+                    await _db.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+            }
+            CategoryAndSubCategoryViewModel modelVM = new CategoryAndSubCategoryViewModel()
+            {
+                CategoryList = await _db.Category.ToListAsync(),
+                SubCategory = model.SubCategory,
+                SubCategoryList = await _db.SubCategory.OrderBy(p => p.Name).Select(p => p.Name).ToListAsync()
+            };
+            return View(modelVM);
+        }
     }
 }
