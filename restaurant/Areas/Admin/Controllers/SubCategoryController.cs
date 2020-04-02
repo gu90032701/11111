@@ -13,6 +13,8 @@ namespace restaurant.Areas.Admin.Controllers
     public class SubCategoryController : Controller
     {
         private readonly ApplicationDbContext _db;
+        [TempData]
+        public string StatusMessage { get; set; }
         public SubCategoryController(ApplicationDbContext db)
         {
             _db = db;
@@ -45,7 +47,7 @@ namespace restaurant.Areas.Admin.Controllers
                 var doesSubcategoryExists = _db.SubCategory.Include(s => s.Category).Where(s => s.Name == model.SubCategory.Name && s.Category.Id == model.SubCategory.CategoryId);
                     if(doesSubcategoryExists.Count()>0)
                 {
-                    //error
+                    StatusMessage = "Error：Sub category exists under" + doesSubcategoryExists.First().Category.Name + " category. please use another name";
                 }
                 else
                 {
@@ -58,7 +60,8 @@ namespace restaurant.Areas.Admin.Controllers
             {
                 CategoryList = await _db.Category.ToListAsync(),
                 SubCategory = model.SubCategory,
-                SubCategoryList = await _db.SubCategory.OrderBy(p => p.Name).Select(p => p.Name).ToListAsync()
+                SubCategoryList = await _db.SubCategory.OrderBy(p => p.Name).Select(p => p.Name).ToListAsync(),
+                StatusMessage=StatusMessage
             };
             return View(modelVM);
         }
